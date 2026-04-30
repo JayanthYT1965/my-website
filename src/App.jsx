@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import { Gem } from 'lucide-react';
+import { Gem, Menu, X } from 'lucide-react';
 import Preloader from './components/Preloader';
 import Home from './pages/Home';
 import Services from './pages/Services';
@@ -16,6 +16,7 @@ function AppContent() {
   const [isPremium, setIsPremium] = useState(() => {
     return localStorage.getItem('theme-mode') === 'premium';
   });
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     if (isPremium) {
@@ -34,18 +35,17 @@ function AppContent() {
       {/* Navigation */}
       <nav className="navbar">
         <div className="container nav-container">
-          <Link to="/" className="logo heading">
+          <Link to="/" className="logo heading" onClick={() => setIsMobileMenuOpen(false)}>
             Apex <span className="gradient-text">Interactive</span>
           </Link>
           
-          <ul className="nav-links">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            <li><Link to="/portfolio">Portfolio</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/blog">Blog</Link></li>
+          <ul className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
+            <li><Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
+            <li><Link to="/services" onClick={() => setIsMobileMenuOpen(false)}>Services</Link></li>
+            <li><Link to="/portfolio" onClick={() => setIsMobileMenuOpen(false)}>Portfolio</Link></li>
+            <li><Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About</Link></li>
+            <li><Link to="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link></li>
           </ul>
-
 
           <div className="nav-actions">
             <button 
@@ -55,7 +55,13 @@ function AppContent() {
             >
               <Gem className="w-5 h-5" />
             </button>
-            <Link to="/contact" className="btn-nav">Contact Me</Link>
+            <Link to="/contact" className="btn-nav hidden-mobile">Contact Me</Link>
+            <button 
+              className="mobile-menu-btn" 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
       </nav>
