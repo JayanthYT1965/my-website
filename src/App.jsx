@@ -95,7 +95,7 @@ function AppContent() {
               <span>Instagram:</span> <a href="https://instagram.com/Jayanth.261" target="_blank">@Jayanth.261</a>
             </div>
             <div className="contact-item">
-              <span>Email:</span> <a href="mailto:Jayanthroblox@gmail.com">Jayanthroblox@gmail.com</a>
+              <span>Email:</span> <a href="mailto:jayanth.kosan@gmail.com">jayanth.kosan@gmail.com</a>
             </div>
             <div className="contact-item">
               <span>Phone:</span> <a href="tel:7993461422">+91 7993461422</a>

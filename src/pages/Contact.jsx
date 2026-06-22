@@ -47,7 +47,7 @@ const Contact = () => {
                     <div className="card-icon">✉️</div>
                     <div className="card-content">
                       <p className="label">Inquiries</p>
-                      <a href="mailto:Jayanthroblox@gmail.com" className="value">Jayanthroblox@gmail.com</a>
+                      <a href="mailto:jayanth.kosan@gmail.com" className="value">jayanth.kosan@gmail.com</a>
                     </div>
                   </div>
                   

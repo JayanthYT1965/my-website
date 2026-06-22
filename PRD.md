@@ -73,6 +73,6 @@
 
 ## 8. Contact Information
 - **Founder**: Jayanth Kosana
-- **Email**: Jayanthroblox@gmail.com
+- **Email**: jayanth.kosan@gmail.com
 - **Phone**: +91 7993461422
 - **Channel**: Instagram (@Jayanth.261)
